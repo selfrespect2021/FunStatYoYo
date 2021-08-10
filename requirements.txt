@@ -3,4 +3,4 @@ pandas
 streamlit
 matplotlib
 arabic_reshaper
-bidi.algorithm
+python-bidi
