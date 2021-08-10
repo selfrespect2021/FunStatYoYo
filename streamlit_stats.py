@@ -16,19 +16,19 @@ all_subjects=['النشاط العلمي ',
           'اللغة الفرنسية',
     'اللغة العربية']
     
-selected_feature="Moyenne Gen"
+selected_feature="المعدل العام"
 
 
 useful_col=first_last_name+all_subjects
-st.title("YouyouStats, what else!")
+st.title("احصائيات عبد اللطيف بلكاني")
 
 def getComparisonFeature(df):
-    if st.checkbox("Choisisez un seul critere pour le choix des groupes."):
+    if st.checkbox("اختر معيار لتشكيل المجموعات"):
     # get the list of columns
         criteria = list(df.select_dtypes(include=['float64']).columns)
         criterion = st.selectbox("", criteria)
         return criterion
-    return "Moyenne Gen"
+    return "المعدل العام"
 
 def getTaskType():
     # Select columns to display
