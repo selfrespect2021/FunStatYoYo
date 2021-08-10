@@ -5,3 +5,4 @@ matplotlib
 arabic_reshaper
 python-bidi
 xlsxwriter
+scipy
