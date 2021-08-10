@@ -4,3 +4,4 @@ streamlit
 matplotlib
 arabic_reshaper
 python-bidi
+xlsxwriter
