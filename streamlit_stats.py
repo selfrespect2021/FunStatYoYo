@@ -34,15 +34,15 @@ def getTaskType():
     # Select columns to display
     if st.checkbox("#1- Choisisez ce que vous voulez faire."):
     # get the list of columns
-        tasks = ["Création des groupes","Statistiques"]
+        tasks = ["تكوين مجموعات","إحصائيات"]
         tasks = st.selectbox("", tasks)
         return tasks
     return ""
 #Get requested task
 option = getTaskType()
-if option == "Statistiques":
+if option == "إحصائيات":
     st.write("Télèchargez le fichier excel qui contient les moyennes par matières.")
-elif option =="Création des groupes":
+elif option =="تكوين محموعات":
     st.write("Télèchargez le fichier excel qui contient les moyennes générales des élèves.")
 
 def plotDensity(df, selected_feature, title="",generate_report=True,name_fig="PNG"):
@@ -106,7 +106,7 @@ def getBestSplit(df,selected_feature,KeepParity=True):
     return group_split(df,grp_pct=0.5,seed=best_seed)
 
 # Upload CSV or XLS files
-with st.sidebar.header('#2- Télécharger le fichier csv/excel.'):
+with st.sidebar.header('#2- تحميل ملف csv/excel.'):
     uploaded_file = st.sidebar.file_uploader("", type=["csv","xls"])
 
 # Some basic stats analysis on classes
@@ -127,17 +127,17 @@ if uploaded_file is not None:
 
     def getUsefulColumns():
         # Select columns to display
-        if st.checkbox("Cochez ici si vous voulez choisir des matières spécifiques"):
+        if st.checkbox("ضع علامة لاختيار مواد معينة"):
         # get the list of columns
             columns = df.columns.tolist()
             delta_cols= set(columns) - set(first_last_name)
-            st.write("#### Choisissez les matières qui vous intéressent :")
+            st.write("#### اختر المواد الدي تريد")
             selected_cols = st.multiselect("", delta_cols)
             return selected_cols
         else:
             return all_subjects
 
-    if option == "Statistiques":
+    if option == "إحصائيات":
         df = load_file()
         # create excel writer object
         writer = pd.ExcelWriter('StatReport.xlsx', engine='xlsxwriter')
