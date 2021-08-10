@@ -20,7 +20,7 @@ selected_feature="Moyenne Gen"
 
 
 useful_col=first_last_name+all_subjects
-st.title("احصائيات المستوى السادس بطدرسة طه حسين")
+st.title("احصائيات المستوى السادس بمدرسة طه حسين")
 
 def getComparisonFeature(df):
     if st.checkbox("Choisisez un seul critere pour le choix des groupes."):
